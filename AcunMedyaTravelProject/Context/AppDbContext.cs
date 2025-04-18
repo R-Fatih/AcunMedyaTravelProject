@@ -5,11 +5,10 @@ namespace AcunMedyaTravelProject.Context
 {
     public class AppDbContext:DbContext
     {
-        
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public AppDbContext(DbContextOptions options) : base(options)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;initial catalog=TravelDb;integrated security=true;TrustServerCertificate=true;");
         }
+
         public DbSet<About> Abouts { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Booking> Bookings { get; set; }

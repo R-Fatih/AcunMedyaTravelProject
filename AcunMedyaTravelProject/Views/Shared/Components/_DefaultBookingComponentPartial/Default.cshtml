@@ -16,7 +16,7 @@
             <div class="col-lg-6">
                 <h1 class="text-white mb-3">Bir tura kaydolun</h1>
                 <p class="text-white mb-4">İlk seyahatinizde %30'a varan indirimleri kaçırmayın.</p>
-                <form method="post" asp-action="/Default/MakeBooking">
+                <form method="post" asp-controller="Default" asp-action="MakeBooking">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating date" id="date3" data-target-input="nearest">
-                                <input asp-for="Date" type="text" class="form-control bg-white border-0" id="datetime" placeholder="Tarih" data-target="#date3" data-toggle="datetimepicker" />
+                                <input asp-for="Date" type="datetime-local" class="form-control bg-white border-0" id="datetime" placeholder="Tarih" data-target="#date3" data-toggle="datetimepicker" />
                                 <label for="datetime">Tarih</label>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                             <div class="form-floating">
 
                                 @Html.DropDownListFor(x => x.PackageId, (SelectList)ViewBag.Packages, "Paket seçin", new {@class="form-select bg-white border-0"})
-                                <label for="select1">Destination</label>
+                                <label for="select1">Lokasyon</label>
                             </div>
                         </div>
 
@@ -55,7 +55,7 @@
                         <div class="col-12">
                             <div class="form-floating">
                                 <textarea asp-for="Note" class="form-control bg-white border-0" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                <label for="message">Special Request</label>
+                                <label for="message">Not</label>
                             </div>
                         </div>
                         <div class="col-12">

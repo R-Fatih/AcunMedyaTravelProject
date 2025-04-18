@@ -1,0 +1,9 @@
+﻿@using System.Security.Claims
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>@User.Identity.Name</h1>
+<h2>@User.Claims.FirstOrDefault(x=>x.Type==ClaimTypes.Role)</h2>
+

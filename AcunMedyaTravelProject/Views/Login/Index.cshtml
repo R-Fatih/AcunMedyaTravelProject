@@ -1,0 +1,13 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form method="post">
+    <label>Kullanıcı adı: </label>
+    <input asp-for="Username" type="text"/>
+    <label>Şifre</label>
+    <input asp-for="Password" type="password"/>
+    <button class="btn btn-success" type="submit">Giriş Yap</button>
+</form>
+
